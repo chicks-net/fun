@@ -20,7 +20,7 @@ NUM[${#NUM[@]}]="######|##__##|######|##__##|######"
 NUM[${#NUM[@]}]="######|##__##|######|____##|____##"
 COLON="__|::|__|::|__"
 HEIGHT=$(awk -F\| '{ print NF }' <<<${COLON})
-CLOCKCOUNT=4
+CLOCKCOUNT=7
 
 FLAG24H=H
 if [[ $1 == "--24hour" ]]; then
@@ -110,7 +110,9 @@ while sleep .1; do
 		show_time "America/New_York"
 		show_time GMT
 		show_time 'Europe/Paris'
+		show_time 'Asia/Baghdad'
 		show_time 'Asia/Singapore'
+		show_time 'Asia/Tokyo'
 
 		[[ $1 == "--hide-cursor" ]] || tput -S <<-!
 			cup ${lines} ${cols}
