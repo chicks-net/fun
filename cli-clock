@@ -22,9 +22,13 @@ COLON="__|::|__|::|__"
 HEIGHT=$(awk -F\| '{ print NF }' <<<${COLON})
 CLOCKCOUNT=4
 
-FLAG24H=I
+FLAG24H=H
 if [[ $1 == "--24hour" ]]; then
 	FLAG24H=H
+	shift
+fi
+if [[ $1 == "--12hour" ]]; then
+	FLAG24H=I
 	shift
 fi
 
